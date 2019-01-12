@@ -1,0 +1,16 @@
+C:\Users\NuranaAr\source\repos\LibraryWFA\LibraryWFA\bin\Debug\LibraryWFA.exe.config
+C:\Users\NuranaAr\source\repos\LibraryWFA\LibraryWFA\bin\Debug\LibraryWFA.exe
+C:\Users\NuranaAr\source\repos\LibraryWFA\LibraryWFA\bin\Debug\LibraryWFA.pdb
+C:\Users\NuranaAr\source\repos\LibraryWFA\LibraryWFA\bin\Debug\EntityFramework.dll
+C:\Users\NuranaAr\source\repos\LibraryWFA\LibraryWFA\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\NuranaAr\source\repos\LibraryWFA\LibraryWFA\bin\Debug\EntityFramework.xml
+C:\Users\NuranaAr\source\repos\LibraryWFA\LibraryWFA\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\NuranaAr\source\repos\LibraryWFA\LibraryWFA\obj\Debug\LibraryWFA.csprojResolveAssemblyReference.cache
+C:\Users\NuranaAr\source\repos\LibraryWFA\LibraryWFA\obj\Debug\LibraryWFA.Form1.resources
+C:\Users\NuranaAr\source\repos\LibraryWFA\LibraryWFA\obj\Debug\LibraryWFA.Properties.Resources.resources
+C:\Users\NuranaAr\source\repos\LibraryWFA\LibraryWFA\obj\Debug\LibraryWFA.csproj.GenerateResource.Cache
+C:\Users\NuranaAr\source\repos\LibraryWFA\LibraryWFA\obj\Debug\LibraryWFA.csproj.CoreCompileInputs.cache
+C:\Users\NuranaAr\source\repos\LibraryWFA\LibraryWFA\obj\Debug\LibraryWFA.exe
+C:\Users\NuranaAr\source\repos\LibraryWFA\LibraryWFA\obj\Debug\LibraryWFA.pdb
+C:\Users\NuranaAr\source\repos\LibraryWFA\LibraryWFA\obj\Debug\LibraryWFA.Forms.Dashboard.resources
+C:\Users\NuranaAr\source\repos\LibraryWFA\LibraryWFA\obj\Debug\LibraryWFA.Forms.UsersForm.resources
