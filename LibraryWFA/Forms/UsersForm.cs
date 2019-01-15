@@ -17,9 +17,11 @@ namespace LibraryWFA.Forms
         LibraryEntities db = new LibraryEntities();
         private Admin admin;
         private User user;
-        int UserId;
+        private int AdminId;
+        private int UserId;
         public UsersForm(int adminId)
         {
+            AdminId = adminId;
             InitializeComponent();
             admin = db.Admins.Find(adminId);
             FillDgvUsers();
@@ -100,6 +102,7 @@ namespace LibraryWFA.Forms
             user.UserUniqueId = TxtUniqueId.Text;
 
             db.SaveChanges();
+            MessageBox.Show("Yenilendi");
             FillDgvUsers();
             Reset();
         }
@@ -111,6 +114,7 @@ namespace LibraryWFA.Forms
             if (r == DialogResult.Yes)
             {
                 db.Users.Remove(user);
+                MessageBox.Show("Silindi");
                 db.SaveChanges();
                 FillDgvUsers();
                 Reset();
@@ -128,6 +132,12 @@ namespace LibraryWFA.Forms
             TxtPhone.ResetText();
             TxtSurname.ResetText();
             TxtUniqueId.ResetText();
+        }
+        private void BtnHome_Click(object sender, EventArgs e)
+        {
+            Dashboard ds = new Dashboard(AdminId);
+            this.Hide();
+            ds.Show();
         }
 
         private void UsersForm_FormClosed(object sender, FormClosedEventArgs e)

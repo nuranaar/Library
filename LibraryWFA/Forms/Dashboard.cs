@@ -101,10 +101,21 @@ namespace LibraryWFA.Forms
             this.Hide();
         }
 
-        private void PcbLogins_Click(object sender, EventArgs e)
+        private void PcbLogins_DoubleClick(object sender, EventArgs e)
         {
             LoginsForm loginsForm = new LoginsForm(admin.Id);
+            loginsForm.Show();
+            this.Hide();
         }
+
+        private void PcbAdmin_DoubleClick(object sender, EventArgs e)
+        {
+            UpdateLogin updateLogin = new UpdateLogin(admin.Id);
+            updateLogin.Show();
+            this.Hide();
+        }
+
+        
 
         // doubleClikde user formunun acilmasi
 

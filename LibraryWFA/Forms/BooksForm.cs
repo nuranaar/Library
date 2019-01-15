@@ -16,10 +16,12 @@ namespace LibraryWFA.Forms
     {
         LibraryEntities db = new LibraryEntities();
         private Admin Admin;
+        private int AdminId;
         private Book book;
         int BookId;
         public BooksForm(int adminId)
         {
+            AdminId = adminId;
             Admin = db.Admins.Find(adminId);
             InitializeComponent();
             FillDgvBooks();
@@ -88,6 +90,7 @@ namespace LibraryWFA.Forms
             book.Count = Convert.ToInt32(NudCount.Value);
            
             db.SaveChanges();
+            MessageBox.Show("Yenilendi");
             FillDgvBooks();
             Reset();
         }
@@ -100,6 +103,7 @@ namespace LibraryWFA.Forms
             {
                 db.Books.Remove(book);
                 db.SaveChanges();
+                MessageBox.Show("Silindi");
                 FillDgvBooks();
                 Reset();
 
@@ -114,6 +118,12 @@ namespace LibraryWFA.Forms
             BtnUpdate.Visible = false;
             TxtName.ResetText();
             NudCount.Value=0;
+        }
+        private void BtnHome_Click(object sender, EventArgs e)
+        {
+            Dashboard ds = new Dashboard(AdminId);
+            this.Hide();
+            ds.Show();
         }
 
         private void BooksForm_FormClosed(object sender, FormClosedEventArgs e)

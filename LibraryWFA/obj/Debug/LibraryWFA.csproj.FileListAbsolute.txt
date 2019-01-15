@@ -32,3 +32,5 @@ C:\Users\ssule\Desktop\Library\LibraryWFA\obj\Debug\LibraryWFA.exe
 C:\Users\ssule\Desktop\Library\LibraryWFA\obj\Debug\LibraryWFA.pdb
 C:\Users\ssule\Desktop\Library\LibraryWFA\obj\Debug\LibraryWFA.csprojAssemblyReference.cache
 C:\Users\ssule\Desktop\Library\LibraryWFA\obj\Debug\LibraryWFA.Forms.BooksForm.resources
+C:\Users\ssule\Desktop\Library\LibraryWFA\obj\Debug\LibraryWFA.Forms.LoginsForm.resources
+C:\Users\ssule\Desktop\Library\LibraryWFA\obj\Debug\LibraryWFA.Forms.UpdateLogin.resources

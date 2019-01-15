@@ -143,6 +143,16 @@ namespace LibraryWFA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap boss3 {
+            get {
+                object obj = ResourceManager.GetObject("boss3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconfinder_preferences_desktop_user_password_24269 {
             get {
                 object obj = ResourceManager.GetObject("iconfinder_preferences-desktop-user-password_24269", resourceCulture);

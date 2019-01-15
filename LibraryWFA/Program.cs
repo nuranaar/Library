@@ -17,7 +17,7 @@ namespace LibraryWFA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Dashboard(1));
+            Application.Run(new Form1());
         }
     }
 }

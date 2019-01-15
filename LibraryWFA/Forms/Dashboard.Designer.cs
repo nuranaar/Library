@@ -36,13 +36,13 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.LblLoginIcon = new System.Windows.Forms.Label();
-            this.LblBookIcon = new System.Windows.Forms.Label();
-            this.LblUserIcon = new System.Windows.Forms.Label();
             this.PcbAdmin = new System.Windows.Forms.PictureBox();
             this.PcbBooks = new System.Windows.Forms.PictureBox();
             this.PcbLogins = new System.Windows.Forms.PictureBox();
             this.PcbUsers = new System.Windows.Forms.PictureBox();
+            this.LblLoginIcon = new System.Windows.Forms.Label();
+            this.LblBookIcon = new System.Windows.Forms.Label();
+            this.LblUserIcon = new System.Windows.Forms.Label();
             this.GrbUserCrud.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PcbAdmin)).BeginInit();
@@ -54,7 +54,7 @@
             // lblAdminIcon
             // 
             this.lblAdminIcon.AutoSize = true;
-            this.lblAdminIcon.Location = new System.Drawing.Point(792, 30);
+            this.lblAdminIcon.Location = new System.Drawing.Point(792, 39);
             this.lblAdminIcon.Name = "lblAdminIcon";
             this.lblAdminIcon.Size = new System.Drawing.Size(106, 13);
             this.lblAdminIcon.TabIndex = 0;
@@ -133,43 +133,16 @@
             this.panel1.Size = new System.Drawing.Size(918, 100);
             this.panel1.TabIndex = 2;
             // 
-            // LblLoginIcon
-            // 
-            this.LblLoginIcon.AutoSize = true;
-            this.LblLoginIcon.Location = new System.Drawing.Point(276, 66);
-            this.LblLoginIcon.Name = "LblLoginIcon";
-            this.LblLoginIcon.Size = new System.Drawing.Size(44, 13);
-            this.LblLoginIcon.TabIndex = 21;
-            this.LblLoginIcon.Text = "Loginler";
-            this.LblLoginIcon.Visible = false;
-            // 
-            // LblBookIcon
-            // 
-            this.LblBookIcon.AutoSize = true;
-            this.LblBookIcon.Location = new System.Drawing.Point(159, 66);
-            this.LblBookIcon.Name = "LblBookIcon";
-            this.LblBookIcon.Size = new System.Drawing.Size(42, 13);
-            this.LblBookIcon.TabIndex = 3;
-            this.LblBookIcon.Text = "Kitablar";
-            // 
-            // LblUserIcon
-            // 
-            this.LblUserIcon.AutoSize = true;
-            this.LblUserIcon.Location = new System.Drawing.Point(32, 66);
-            this.LblUserIcon.Name = "LblUserIcon";
-            this.LblUserIcon.Size = new System.Drawing.Size(52, 13);
-            this.LblUserIcon.TabIndex = 20;
-            this.LblUserIcon.Text = "Musteriler";
-            // 
             // PcbAdmin
             // 
             this.PcbAdmin.Image = global::LibraryWFA.Properties.Resources.Admin2;
-            this.PcbAdmin.Location = new System.Drawing.Point(832, 3);
+            this.PcbAdmin.Location = new System.Drawing.Point(832, 12);
             this.PcbAdmin.Name = "PcbAdmin";
             this.PcbAdmin.Size = new System.Drawing.Size(24, 24);
             this.PcbAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PcbAdmin.TabIndex = 25;
             this.PcbAdmin.TabStop = false;
+            this.PcbAdmin.DoubleClick += new System.EventHandler(this.PcbAdmin_DoubleClick);
             // 
             // PcbBooks
             // 
@@ -192,7 +165,7 @@
             this.PcbLogins.TabIndex = 23;
             this.PcbLogins.TabStop = false;
             this.PcbLogins.Visible = false;
-            this.PcbLogins.Click += new System.EventHandler(this.PcbLogins_Click);
+            this.PcbLogins.DoubleClick += new System.EventHandler(this.PcbLogins_DoubleClick);
             // 
             // PcbUsers
             // 
@@ -204,6 +177,34 @@
             this.PcbUsers.TabIndex = 22;
             this.PcbUsers.TabStop = false;
             this.PcbUsers.DoubleClick += new System.EventHandler(this.PcbUsers_DoubleClick);
+            // 
+            // LblLoginIcon
+            // 
+            this.LblLoginIcon.AutoSize = true;
+            this.LblLoginIcon.Location = new System.Drawing.Point(268, 66);
+            this.LblLoginIcon.Name = "LblLoginIcon";
+            this.LblLoginIcon.Size = new System.Drawing.Size(58, 13);
+            this.LblLoginIcon.TabIndex = 21;
+            this.LblLoginIcon.Text = "Akkauntlar";
+            this.LblLoginIcon.Visible = false;
+            // 
+            // LblBookIcon
+            // 
+            this.LblBookIcon.AutoSize = true;
+            this.LblBookIcon.Location = new System.Drawing.Point(159, 66);
+            this.LblBookIcon.Name = "LblBookIcon";
+            this.LblBookIcon.Size = new System.Drawing.Size(42, 13);
+            this.LblBookIcon.TabIndex = 3;
+            this.LblBookIcon.Text = "Kitablar";
+            // 
+            // LblUserIcon
+            // 
+            this.LblUserIcon.AutoSize = true;
+            this.LblUserIcon.Location = new System.Drawing.Point(32, 66);
+            this.LblUserIcon.Name = "LblUserIcon";
+            this.LblUserIcon.Size = new System.Drawing.Size(52, 13);
+            this.LblUserIcon.TabIndex = 20;
+            this.LblUserIcon.Text = "Musteriler";
             // 
             // Dashboard
             // 
