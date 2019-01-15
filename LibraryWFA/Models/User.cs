@@ -25,6 +25,7 @@ namespace LibraryWFA.Models
         public string Surname { get; set; }
         public string UserUniqueId { get; set; }
         public Nullable<int> CreatedAdmin { get; set; }
+        public string Phone { get; set; }
     
         public virtual Admin Admin { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

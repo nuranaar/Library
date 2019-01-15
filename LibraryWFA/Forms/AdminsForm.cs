@@ -15,12 +15,12 @@ namespace LibraryWFA
 {
     public partial class Form1 : Form
     {
-        LibraryDbEntities db = new LibraryDbEntities();
+        LibraryEntities db = new LibraryEntities();
         int AdminId;
         public Form1()
         {
             InitializeComponent();
-            TxtLogin.Text = "nurana";
+            TxtLogin.Text = "nuranaar";
             TxtPw.Text = "qwerty123";
         }
 

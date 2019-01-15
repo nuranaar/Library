@@ -4,15 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="185c93d68df24ceba054fd2b8d32058a" Name="Diagram1">
-        <EntityTypeShape EntityType="LibraryDbModel.Admin" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="LibraryDbModel.BookReserve" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="LibraryDbModel.Book" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="LibraryDbModel.User" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
-        <AssociationConnector Association="LibraryDbModel.FK_BookReserves_Admins" ManuallyRouted="false" />
-        <AssociationConnector Association="LibraryDbModel.FK_Users_Admins" ManuallyRouted="false" />
-        <AssociationConnector Association="LibraryDbModel.FK_BookReserves_Books" ManuallyRouted="false" />
-        <AssociationConnector Association="LibraryDbModel.FK_BookReserves_Users" ManuallyRouted="false" />
+      <Diagram DiagramId="e03b603393254eff8cf2010e8813780b" Name="Diagram1">
+        <EntityTypeShape EntityType="LibraryModel.Admin" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.BookReserve" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Book" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.User" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <AssociationConnector Association="LibraryModel.FK_BookReserves_Admins" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_Users_Admins" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_BookReserves_Books" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_BookReserves_Users" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

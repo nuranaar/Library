@@ -13,10 +13,10 @@ namespace LibraryWFA.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class LibraryDbEntities : DbContext
+    public partial class LibraryEntities : DbContext
     {
-        public LibraryDbEntities()
-            : base("name=LibraryDbEntities")
+        public LibraryEntities()
+            : base("name=LibraryEntities")
         {
         }
     

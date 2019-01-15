@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LibraryDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="LibraryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Admins">
           <Key>
             <PropertyRef Name="Id" />
@@ -15,6 +15,7 @@
           <Property Name="Login" Type="nvarchar" MaxLength="50" />
           <Property Name="Password" Type="nvarchar" MaxLength="50" />
           <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsBoss" Type="bit" />
         </EntityType>
         <EntityType Name="BookReserves">
           <Key>
@@ -45,6 +46,7 @@
           <Property Name="Surname" Type="nvarchar" MaxLength="50" />
           <Property Name="UserUniqueId" Type="nvarchar" MaxLength="50" />
           <Property Name="CreatedAdmin" Type="int" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK_BookReserves_Admins">
           <End Role="Admins" Type="Self.Admins" Multiplicity="0..1" />
@@ -94,7 +96,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="LibraryDbModelStoreContainer">
+        <EntityContainer Name="LibraryModelStoreContainer">
           <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BookReserves" EntityType="Self.BookReserves" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Books" EntityType="Self.Books" Schema="dbo" store:Type="Tables" />
@@ -116,11 +118,10 @@
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="LibraryDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="LibraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Admin">
           <Key>
             <PropertyRef Name="Id" />
@@ -131,6 +132,7 @@
           <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsBoss" Type="Boolean" />
           <NavigationProperty Name="BookReserves" Relationship="Self.FK_BookReserves_Admins" FromRole="Admins" ToRole="BookReserves" />
           <NavigationProperty Name="Users" Relationship="Self.FK_Users_Admins" FromRole="Admins" ToRole="Users" />
         </EntityType>
@@ -169,6 +171,7 @@
           <Property Name="CreatedAdmin" Type="Int32" />
           <NavigationProperty Name="Admin" Relationship="Self.FK_Users_Admins" FromRole="Users" ToRole="Admins" />
           <NavigationProperty Name="BookReserves" Relationship="Self.FK_BookReserves_Users" FromRole="Users" ToRole="BookReserves" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_BookReserves_Admins">
           <End Role="Admins" Type="Self.Admin" Multiplicity="0..1" />
@@ -218,7 +221,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="LibraryDbEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="LibraryEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Admins" EntityType="Self.Admin" />
           <EntitySet Name="BookReserves" EntityType="Self.BookReserve" />
           <EntitySet Name="Books" EntityType="Self.Book" />
@@ -245,9 +248,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="LibraryDbModelStoreContainer" CdmEntityContainer="LibraryDbEntities">
+        <EntityContainerMapping StorageEntityContainer="LibraryModelStoreContainer" CdmEntityContainer="LibraryEntities">
           <EntitySetMapping Name="Admins">
-            <EntityTypeMapping TypeName="LibraryDbModel.Admin">
+            <EntityTypeMapping TypeName="LibraryModel.Admin">
               <MappingFragment StoreEntitySet="Admins">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -255,11 +258,12 @@
                 <ScalarProperty Name="Login" ColumnName="Login" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="IsBoss" ColumnName="IsBoss" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BookReserves">
-            <EntityTypeMapping TypeName="LibraryDbModel.BookReserve">
+            <EntityTypeMapping TypeName="LibraryModel.BookReserve">
               <MappingFragment StoreEntitySet="BookReserves">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -272,7 +276,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Books">
-            <EntityTypeMapping TypeName="LibraryDbModel.Book">
+            <EntityTypeMapping TypeName="LibraryModel.Book">
               <MappingFragment StoreEntitySet="Books">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -281,8 +285,9 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="LibraryDbModel.User">
+            <EntityTypeMapping TypeName="LibraryModel.User">
               <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Surname" ColumnName="Surname" />

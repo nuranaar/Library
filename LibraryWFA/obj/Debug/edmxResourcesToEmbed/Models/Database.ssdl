@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="LibraryDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="LibraryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Admins">
     <Key>
       <PropertyRef Name="Id" />
@@ -10,6 +10,7 @@
     <Property Name="Login" Type="nvarchar" MaxLength="50" />
     <Property Name="Password" Type="nvarchar" MaxLength="50" />
     <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsBoss" Type="bit" />
   </EntityType>
   <EntityType Name="BookReserves">
     <Key>
@@ -40,6 +41,7 @@
     <Property Name="Surname" Type="nvarchar" MaxLength="50" />
     <Property Name="UserUniqueId" Type="nvarchar" MaxLength="50" />
     <Property Name="CreatedAdmin" Type="int" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <Association Name="FK_BookReserves_Admins">
     <End Role="Admins" Type="Self.Admins" Multiplicity="0..1" />
@@ -89,7 +91,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="LibraryDbModelStoreContainer">
+  <EntityContainer Name="LibraryModelStoreContainer">
     <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="BookReserves" EntityType="Self.BookReserves" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Books" EntityType="Self.Books" Schema="dbo" store:Type="Tables" />

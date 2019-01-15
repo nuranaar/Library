@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="LibraryDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="LibraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="Admin">
     <Key>
       <PropertyRef Name="Id" />
@@ -10,6 +10,7 @@
     <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsBoss" Type="Boolean" />
     <NavigationProperty Name="BookReserves" Relationship="Self.FK_BookReserves_Admins" FromRole="Admins" ToRole="BookReserves" />
     <NavigationProperty Name="Users" Relationship="Self.FK_Users_Admins" FromRole="Admins" ToRole="Users" />
   </EntityType>
@@ -48,6 +49,7 @@
     <Property Name="CreatedAdmin" Type="Int32" />
     <NavigationProperty Name="Admin" Relationship="Self.FK_Users_Admins" FromRole="Users" ToRole="Admins" />
     <NavigationProperty Name="BookReserves" Relationship="Self.FK_BookReserves_Users" FromRole="Users" ToRole="BookReserves" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <Association Name="FK_BookReserves_Admins">
     <End Role="Admins" Type="Self.Admin" Multiplicity="0..1" />
@@ -97,7 +99,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="LibraryDbEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="LibraryEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Admins" EntityType="Self.Admin" />
     <EntitySet Name="BookReserves" EntityType="Self.BookReserve" />
     <EntitySet Name="Books" EntityType="Self.Book" />
