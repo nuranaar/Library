@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.lblAdminIcon = new System.Windows.Forms.Label();
-            this.BtnHome = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.TxtName = new System.Windows.Forms.TextBox();
             this.TxtSurname = new System.Windows.Forms.TextBox();
@@ -63,16 +62,6 @@
             this.lblAdminIcon.Size = new System.Drawing.Size(193, 24);
             this.lblAdminIcon.TabIndex = 26;
             this.lblAdminIcon.Text = "AdminNameSurname";
-            this.lblAdminIcon.Click += new System.EventHandler(this.lblAdminIcon_Click);
-            // 
-            // BtnHome
-            // 
-            this.BtnHome.Location = new System.Drawing.Point(585, 448);
-            this.BtnHome.Name = "BtnHome";
-            this.BtnHome.Size = new System.Drawing.Size(80, 47);
-            this.BtnHome.TabIndex = 33;
-            this.BtnHome.Text = "Ana Sehife";
-            this.BtnHome.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -265,12 +254,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(677, 507);
             this.Controls.Add(this.GrbInfo);
-            this.Controls.Add(this.BtnHome);
             this.Controls.Add(this.PcbAdmin);
             this.Controls.Add(this.lblAdminIcon);
             this.Name = "UpdateLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Akkaunt Guncelle";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.UpdateLogin_FormClosed);
             this.PnlNewPw.ResumeLayout(false);
             this.PnlNewPw.PerformLayout();
             this.GrbInfo.ResumeLayout(false);
@@ -285,7 +273,6 @@
 
         private System.Windows.Forms.PictureBox PcbAdmin;
         private System.Windows.Forms.Label lblAdminIcon;
-        private System.Windows.Forms.Button BtnHome;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TxtName;
         private System.Windows.Forms.TextBox TxtSurname;

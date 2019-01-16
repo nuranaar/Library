@@ -95,28 +95,12 @@ namespace LibraryWFA.Forms
         }
         #endregion
 
-        private void BtnHome_Click(object sender, EventArgs e)
-        {
-            Dashboard ds = new Dashboard(AdminId);
-            this.Hide();
-            ds.Show();
-        }
-
-        private void UpdateLogin_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
+     
 
         private void TxtChanged_TextChanged(object sender, EventArgs e)
         {
             BtnUpdate.Enabled = true;
         }
 
-        
-
-        private void lblAdminIcon_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

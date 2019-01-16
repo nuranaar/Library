@@ -25,6 +25,14 @@ namespace LibraryWFA.Forms
             Admin = db.Admins.Find(adminId);
             InitializeComponent();
             FillDgvBooks();
+            IfAdminBoss();
+        }
+
+        //admin eyer bosdursa
+        private void IfAdminBoss()
+        {
+            BtnDel.Enabled = true;
+            BtnUpdate.Enabled = true;
         }
 
         #region Creat Book
@@ -60,6 +68,7 @@ namespace LibraryWFA.Forms
 
         #endregion
 
+        #region Update And Delet Book
 
         private void DgvBooks_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -75,7 +84,7 @@ namespace LibraryWFA.Forms
             NudCount.Value = Convert.ToDecimal(book.Count);
             
         }
-        #region Update And Delet Book
+        
 
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
@@ -119,16 +128,6 @@ namespace LibraryWFA.Forms
             TxtName.ResetText();
             NudCount.Value=0;
         }
-        private void BtnHome_Click(object sender, EventArgs e)
-        {
-            Dashboard ds = new Dashboard(AdminId);
-            this.Hide();
-            ds.Show();
-        }
-
-        private void BooksForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
+        
     }
 }

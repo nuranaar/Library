@@ -34,3 +34,4 @@ C:\Users\ssule\Desktop\Library\LibraryWFA\obj\Debug\LibraryWFA.csprojAssemblyRef
 C:\Users\ssule\Desktop\Library\LibraryWFA\obj\Debug\LibraryWFA.Forms.BooksForm.resources
 C:\Users\ssule\Desktop\Library\LibraryWFA\obj\Debug\LibraryWFA.Forms.LoginsForm.resources
 C:\Users\ssule\Desktop\Library\LibraryWFA\obj\Debug\LibraryWFA.Forms.UpdateLogin.resources
+C:\Users\ssule\Desktop\Library\LibraryWFA\obj\Debug\LibraryWFA.ReserveForm.resources

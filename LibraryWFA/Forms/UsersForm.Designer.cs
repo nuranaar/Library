@@ -49,7 +49,6 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BtnHome = new System.Windows.Forms.Button();
             this.GrbAnket.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -219,7 +218,7 @@
             // 
             // Column6
             // 
-            this.Column6.HeaderText = "Qeydiyata salan wexs";
+            this.Column6.HeaderText = "Qeydiyyata salan wexs";
             this.Column6.Name = "Column6";
             // 
             // label2
@@ -242,28 +241,18 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
-            // BtnHome
-            // 
-            this.BtnHome.Location = new System.Drawing.Point(801, 333);
-            this.BtnHome.Name = "BtnHome";
-            this.BtnHome.Size = new System.Drawing.Size(80, 47);
-            this.BtnHome.TabIndex = 8;
-            this.BtnHome.Text = "Ana Sehife";
-            this.BtnHome.UseVisualStyleBackColor = true;
-            // 
             // UsersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(893, 392);
-            this.Controls.Add(this.BtnHome);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.DgvUsers);
             this.Controls.Add(this.GrbAnket);
             this.Name = "UsersForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Users";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.UsersForm_FormClosed);
             this.GrbAnket.ResumeLayout(false);
             this.GrbAnket.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvUsers)).EndInit();
@@ -296,6 +285,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.Button BtnHome;
     }
 }

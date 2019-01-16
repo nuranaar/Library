@@ -42,7 +42,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.PcbBooks = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.BtnHome = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvBooks)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NudCount)).BeginInit();
@@ -106,6 +105,7 @@
             // BtnUpdate
             // 
             this.BtnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnUpdate.Enabled = false;
             this.BtnUpdate.Location = new System.Drawing.Point(9, 118);
             this.BtnUpdate.Name = "BtnUpdate";
             this.BtnUpdate.Size = new System.Drawing.Size(112, 34);
@@ -127,6 +127,7 @@
             // 
             // BtnDel
             // 
+            this.BtnDel.Enabled = false;
             this.BtnDel.Location = new System.Drawing.Point(153, 118);
             this.BtnDel.Name = "BtnDel";
             this.BtnDel.Size = new System.Drawing.Size(112, 34);
@@ -181,28 +182,18 @@
             this.label1.TabIndex = 25;
             this.label1.Text = "Kitablar";
             // 
-            // BtnHome
-            // 
-            this.BtnHome.Location = new System.Drawing.Point(548, 257);
-            this.BtnHome.Name = "BtnHome";
-            this.BtnHome.Size = new System.Drawing.Size(80, 47);
-            this.BtnHome.TabIndex = 27;
-            this.BtnHome.Text = "Ana Sehife";
-            this.BtnHome.UseVisualStyleBackColor = true;
-            // 
             // BooksForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(640, 316);
-            this.Controls.Add(this.BtnHome);
             this.Controls.Add(this.PcbBooks);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.DgvBooks);
             this.Name = "BooksForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Books";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BooksForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.DgvBooks)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -229,6 +220,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.NumericUpDown NudCount;
-        private System.Windows.Forms.Button BtnHome;
     }
 }

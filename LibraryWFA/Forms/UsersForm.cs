@@ -133,17 +133,9 @@ namespace LibraryWFA.Forms
             TxtSurname.ResetText();
             TxtUniqueId.ResetText();
         }
-        private void BtnHome_Click(object sender, EventArgs e)
-        {
-            Dashboard ds = new Dashboard(AdminId);
-            this.Hide();
-            ds.Show();
-        }
+        
 
-        private void UsersForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
+      
 
         
     }

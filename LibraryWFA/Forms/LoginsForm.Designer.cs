@@ -31,6 +31,7 @@
             this.lblAdminIcon = new System.Windows.Forms.Label();
             this.LblLoginIcon = new System.Windows.Forms.Label();
             this.GrbAnket = new System.Windows.Forms.GroupBox();
+            this.CkbIsBoss = new System.Windows.Forms.CheckBox();
             this.TxtPw = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.BtnUpdate = new System.Windows.Forms.Button();
@@ -52,8 +53,6 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CkbIsBoss = new System.Windows.Forms.CheckBox();
-            this.BtnHome = new System.Windows.Forms.Button();
             this.PcbLogins = new System.Windows.Forms.PictureBox();
             this.PcbAdmin = new System.Windows.Forms.PictureBox();
             this.GrbAnket.SuspendLayout();
@@ -103,6 +102,16 @@
             this.GrbAnket.TabIndex = 30;
             this.GrbAnket.TabStop = false;
             this.GrbAnket.Text = "Admin";
+            // 
+            // CkbIsBoss
+            // 
+            this.CkbIsBoss.AutoSize = true;
+            this.CkbIsBoss.Location = new System.Drawing.Point(9, 237);
+            this.CkbIsBoss.Name = "CkbIsBoss";
+            this.CkbIsBoss.Size = new System.Drawing.Size(69, 17);
+            this.CkbIsBoss.TabIndex = 26;
+            this.CkbIsBoss.Text = "Idarecidir";
+            this.CkbIsBoss.UseVisualStyleBackColor = true;
             // 
             // TxtPw
             // 
@@ -272,26 +281,6 @@
             this.Column7.HeaderText = "Idarecidir";
             this.Column7.Name = "Column7";
             // 
-            // CkbIsBoss
-            // 
-            this.CkbIsBoss.AutoSize = true;
-            this.CkbIsBoss.Location = new System.Drawing.Point(9, 237);
-            this.CkbIsBoss.Name = "CkbIsBoss";
-            this.CkbIsBoss.Size = new System.Drawing.Size(69, 17);
-            this.CkbIsBoss.TabIndex = 26;
-            this.CkbIsBoss.Text = "Idarecidir";
-            this.CkbIsBoss.UseVisualStyleBackColor = true;
-            // 
-            // BtnHome
-            // 
-            this.BtnHome.Location = new System.Drawing.Point(837, 410);
-            this.BtnHome.Name = "BtnHome";
-            this.BtnHome.Size = new System.Drawing.Size(80, 47);
-            this.BtnHome.TabIndex = 32;
-            this.BtnHome.Text = "Ana Sehife";
-            this.BtnHome.UseVisualStyleBackColor = true;
-            this.BtnHome.Click += new System.EventHandler(this.BtnHome_Click);
-            // 
             // PcbLogins
             // 
             this.PcbLogins.Image = global::LibraryWFA.Properties.Resources.iconfinder_preferences_desktop_user_password_24269;
@@ -317,7 +306,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(929, 470);
-            this.Controls.Add(this.BtnHome);
             this.Controls.Add(this.DgvLogins);
             this.Controls.Add(this.GrbAnket);
             this.Controls.Add(this.PcbLogins);
@@ -325,8 +313,8 @@
             this.Controls.Add(this.PcbAdmin);
             this.Controls.Add(this.lblAdminIcon);
             this.Name = "LoginsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Logins";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginsForm_FormClosed);
             this.GrbAnket.ResumeLayout(false);
             this.GrbAnket.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvLogins)).EndInit();
@@ -366,6 +354,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.CheckBox CkbIsBoss;
-        private System.Windows.Forms.Button BtnHome;
     }
 }

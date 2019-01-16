@@ -31,15 +31,15 @@ namespace LibraryWFA.Forms
         {
             lblAdminIcon.Text = admin.Name + " " + admin.Surname;
             PcbAdmin.Image = Resources.boss2;
-            FIllDgvLogins();    
+            FIllDgvLogins();
         }
 
-        
+
 
         #region Create login
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(TxtLogin.Text)|| string.IsNullOrEmpty(TxtName.Text) || string.IsNullOrEmpty(TxtPhone.Text) || string.IsNullOrEmpty(TxtPw.Text) || string.IsNullOrEmpty(TxtSurname.Text))
+            if (string.IsNullOrEmpty(TxtLogin.Text) || string.IsNullOrEmpty(TxtName.Text) || string.IsNullOrEmpty(TxtPhone.Text) || string.IsNullOrEmpty(TxtPw.Text) || string.IsNullOrEmpty(TxtSurname.Text))
             {
                 MessageBox.Show("Xanalari doldurun");
             }
@@ -141,16 +141,6 @@ namespace LibraryWFA.Forms
             CkbIsBoss.Checked = false;
         }
 
-        private void BtnHome_Click(object sender, EventArgs e)
-        {
-            Dashboard ds = new Dashboard(AdminId);
-            this.Hide();
-            ds.Show();
-        }
-        private void LoginsForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
     }
 }
 
