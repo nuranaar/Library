@@ -43,7 +43,6 @@ namespace LibraryWFA
             }
             Dashboard dashboard = new Dashboard(AdminId);
             dashboard.Show();
-            this.Hide();
         }
     }
 }

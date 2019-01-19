@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReserveForm));
             this.DgvReserves = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,11 +39,10 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GrbUserCrud = new System.Windows.Forms.GroupBox();
+            this.GrbBookCrud = new System.Windows.Forms.GroupBox();
             this.TxtUniqueId = new System.Windows.Forms.TextBox();
             this.PnlButtons = new System.Windows.Forms.Panel();
             this.BtnEnd = new System.Windows.Forms.Button();
-            this.BtnUpdate = new System.Windows.Forms.Button();
             this.BtnBookReservation = new System.Windows.Forms.Button();
             this.PnlDateTime = new System.Windows.Forms.Panel();
             this.TxtStartTime = new System.Windows.Forms.TextBox();
@@ -60,13 +60,21 @@
             this.CmdBookName = new System.Windows.Forms.ComboBox();
             this.LblBookName = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.PcbReserves = new System.Windows.Forms.PictureBox();
             this.LblReserveIcon = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BtnSearch = new System.Windows.Forms.Button();
+            this.BtnReset = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.CmbSearchBook = new System.Windows.Forms.ComboBox();
+            this.CmbSearchId = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.PcbReserves = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvReserves)).BeginInit();
-            this.GrbUserCrud.SuspendLayout();
+            this.GrbBookCrud.SuspendLayout();
             this.PnlButtons.SuspendLayout();
             this.PnlDateTime.SuspendLayout();
             this.PnlUser.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PcbReserves)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,7 +93,7 @@
             this.Column8,
             this.Column6,
             this.Column9});
-            this.DgvReserves.Location = new System.Drawing.Point(9, 77);
+            this.DgvReserves.Location = new System.Drawing.Point(9, 145);
             this.DgvReserves.Name = "DgvReserves";
             this.DgvReserves.Size = new System.Drawing.Size(740, 290);
             this.DgvReserves.TabIndex = 28;
@@ -137,22 +145,22 @@
             this.Column9.HeaderText = "Cerime";
             this.Column9.Name = "Column9";
             // 
-            // GrbUserCrud
+            // GrbBookCrud
             // 
-            this.GrbUserCrud.Controls.Add(this.TxtUniqueId);
-            this.GrbUserCrud.Controls.Add(this.PnlButtons);
-            this.GrbUserCrud.Controls.Add(this.PnlDateTime);
-            this.GrbUserCrud.Controls.Add(this.PnlUser);
-            this.GrbUserCrud.Controls.Add(this.CmbUniqueId);
-            this.GrbUserCrud.Controls.Add(this.CmdBookName);
-            this.GrbUserCrud.Controls.Add(this.LblBookName);
-            this.GrbUserCrud.Controls.Add(this.label4);
-            this.GrbUserCrud.Location = new System.Drawing.Point(769, 77);
-            this.GrbUserCrud.Name = "GrbUserCrud";
-            this.GrbUserCrud.Size = new System.Drawing.Size(285, 290);
-            this.GrbUserCrud.TabIndex = 27;
-            this.GrbUserCrud.TabStop = false;
-            this.GrbUserCrud.Text = "Kitabi Rezervi";
+            this.GrbBookCrud.Controls.Add(this.TxtUniqueId);
+            this.GrbBookCrud.Controls.Add(this.PnlButtons);
+            this.GrbBookCrud.Controls.Add(this.PnlDateTime);
+            this.GrbBookCrud.Controls.Add(this.PnlUser);
+            this.GrbBookCrud.Controls.Add(this.CmbUniqueId);
+            this.GrbBookCrud.Controls.Add(this.CmdBookName);
+            this.GrbBookCrud.Controls.Add(this.LblBookName);
+            this.GrbBookCrud.Controls.Add(this.label4);
+            this.GrbBookCrud.Location = new System.Drawing.Point(769, 141);
+            this.GrbBookCrud.Name = "GrbBookCrud";
+            this.GrbBookCrud.Size = new System.Drawing.Size(285, 169);
+            this.GrbBookCrud.TabIndex = 27;
+            this.GrbBookCrud.TabStop = false;
+            this.GrbBookCrud.Text = "Kitabi Rezervi";
             // 
             // TxtUniqueId
             // 
@@ -165,7 +173,6 @@
             // PnlButtons
             // 
             this.PnlButtons.Controls.Add(this.BtnEnd);
-            this.PnlButtons.Controls.Add(this.BtnUpdate);
             this.PnlButtons.Controls.Add(this.BtnBookReservation);
             this.PnlButtons.Location = new System.Drawing.Point(6, 92);
             this.PnlButtons.Name = "PnlButtons";
@@ -176,25 +183,14 @@
             // 
             this.BtnEnd.Enabled = false;
             this.BtnEnd.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.BtnEnd.Location = new System.Drawing.Point(140, 19);
+            this.BtnEnd.Location = new System.Drawing.Point(27, 19);
             this.BtnEnd.Name = "BtnEnd";
-            this.BtnEnd.Size = new System.Drawing.Size(108, 34);
+            this.BtnEnd.Size = new System.Drawing.Size(221, 34);
             this.BtnEnd.TabIndex = 14;
             this.BtnEnd.Text = "Sonlandir";
             this.BtnEnd.UseVisualStyleBackColor = true;
             this.BtnEnd.Visible = false;
             this.BtnEnd.Click += new System.EventHandler(this.BtnEnd_Click);
-            // 
-            // BtnUpdate
-            // 
-            this.BtnUpdate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.BtnUpdate.Location = new System.Drawing.Point(27, 19);
-            this.BtnUpdate.Name = "BtnUpdate";
-            this.BtnUpdate.Size = new System.Drawing.Size(108, 34);
-            this.BtnUpdate.TabIndex = 13;
-            this.BtnUpdate.Text = "Yenile";
-            this.BtnUpdate.UseVisualStyleBackColor = true;
-            this.BtnUpdate.Visible = false;
             // 
             // BtnBookReservation
             // 
@@ -215,7 +211,7 @@
             this.PnlDateTime.Controls.Add(this.label10);
             this.PnlDateTime.Location = new System.Drawing.Point(6, 144);
             this.PnlDateTime.Name = "PnlDateTime";
-            this.PnlDateTime.Size = new System.Drawing.Size(273, 121);
+            this.PnlDateTime.Size = new System.Drawing.Size(273, 120);
             this.PnlDateTime.TabIndex = 10;
             this.PnlDateTime.Visible = false;
             // 
@@ -359,17 +355,6 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Musterini kodu:";
             // 
-            // PcbReserves
-            // 
-            this.PcbReserves.Image = global::LibraryWFA.Properties.Resources.reserve;
-            this.PcbReserves.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.PcbReserves.Location = new System.Drawing.Point(22, 14);
-            this.PcbReserves.Name = "PcbReserves";
-            this.PcbReserves.Size = new System.Drawing.Size(48, 48);
-            this.PcbReserves.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PcbReserves.TabIndex = 30;
-            this.PcbReserves.TabStop = false;
-            // 
             // LblReserveIcon
             // 
             this.LblReserveIcon.AutoSize = true;
@@ -381,26 +366,115 @@
             this.LblReserveIcon.TabIndex = 29;
             this.LblReserveIcon.Text = "Rezervler";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.BtnSearch);
+            this.groupBox1.Controls.Add(this.BtnReset);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.CmbSearchBook);
+            this.groupBox1.Controls.Add(this.CmbSearchId);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Location = new System.Drawing.Point(9, 68);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(740, 71);
+            this.groupBox1.TabIndex = 31;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Axraris";
+            // 
+            // BtnSearch
+            // 
+            this.BtnSearch.BackgroundImage = global::LibraryWFA.Properties.Resources.search;
+            this.BtnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnSearch.Location = new System.Drawing.Point(594, 14);
+            this.BtnSearch.Name = "BtnSearch";
+            this.BtnSearch.Size = new System.Drawing.Size(48, 48);
+            this.BtnSearch.TabIndex = 37;
+            this.BtnSearch.UseVisualStyleBackColor = true;
+            this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            // 
+            // BtnReset
+            // 
+            this.BtnReset.BackgroundImage = global::LibraryWFA.Properties.Resources.reset;
+            this.BtnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BtnReset.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnReset.Location = new System.Drawing.Point(658, 14);
+            this.BtnReset.Name = "BtnReset";
+            this.BtnReset.Size = new System.Drawing.Size(48, 48);
+            this.BtnReset.TabIndex = 36;
+            this.BtnReset.UseVisualStyleBackColor = true;
+            this.BtnReset.Click += new System.EventHandler(this.BtnReset_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label5.Location = new System.Drawing.Point(311, 32);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 13);
+            this.label5.TabIndex = 32;
+            this.label5.Text = "Kitabin adi:";
+            // 
+            // CmbSearchBook
+            // 
+            this.CmbSearchBook.FormattingEnabled = true;
+            this.CmbSearchBook.Location = new System.Drawing.Point(386, 28);
+            this.CmbSearchBook.Name = "CmbSearchBook";
+            this.CmbSearchBook.Size = new System.Drawing.Size(144, 21);
+            this.CmbSearchBook.TabIndex = 33;
+            // 
+            // CmbSearchId
+            // 
+            this.CmbSearchId.FormattingEnabled = true;
+            this.CmbSearchId.Location = new System.Drawing.Point(107, 28);
+            this.CmbSearchId.Name = "CmbSearchId";
+            this.CmbSearchId.Size = new System.Drawing.Size(144, 21);
+            this.CmbSearchId.TabIndex = 35;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label6.Location = new System.Drawing.Point(12, 32);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 13);
+            this.label6.TabIndex = 34;
+            this.label6.Text = "Musterini kodu:";
+            // 
+            // PcbReserves
+            // 
+            this.PcbReserves.Image = ((System.Drawing.Image)(resources.GetObject("PcbReserves.Image")));
+            this.PcbReserves.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.PcbReserves.Location = new System.Drawing.Point(22, 14);
+            this.PcbReserves.Name = "PcbReserves";
+            this.PcbReserves.Size = new System.Drawing.Size(48, 48);
+            this.PcbReserves.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PcbReserves.TabIndex = 30;
+            this.PcbReserves.TabStop = false;
+            // 
             // ReserveForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1077, 450);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.PcbReserves);
             this.Controls.Add(this.LblReserveIcon);
             this.Controls.Add(this.DgvReserves);
-            this.Controls.Add(this.GrbUserCrud);
+            this.Controls.Add(this.GrbBookCrud);
             this.Name = "ReserveForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rezervler";
+            this.Click += new System.EventHandler(this.ReserveForm_Click);
             ((System.ComponentModel.ISupportInitialize)(this.DgvReserves)).EndInit();
-            this.GrbUserCrud.ResumeLayout(false);
-            this.GrbUserCrud.PerformLayout();
+            this.GrbBookCrud.ResumeLayout(false);
+            this.GrbBookCrud.PerformLayout();
             this.PnlButtons.ResumeLayout(false);
             this.PnlDateTime.ResumeLayout(false);
             this.PnlDateTime.PerformLayout();
             this.PnlUser.ResumeLayout(false);
             this.PnlUser.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PcbReserves)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -419,11 +493,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.GroupBox GrbUserCrud;
+        private System.Windows.Forms.GroupBox GrbBookCrud;
         private System.Windows.Forms.TextBox TxtUniqueId;
         private System.Windows.Forms.Panel PnlButtons;
         private System.Windows.Forms.Button BtnEnd;
-        private System.Windows.Forms.Button BtnUpdate;
         private System.Windows.Forms.Button BtnBookReservation;
         private System.Windows.Forms.Panel PnlDateTime;
         private System.Windows.Forms.TextBox TxtStartTime;
@@ -443,5 +516,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox PcbReserves;
         private System.Windows.Forms.Label LblReserveIcon;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox CmbSearchBook;
+        private System.Windows.Forms.ComboBox CmbSearchId;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button BtnReset;
+        private System.Windows.Forms.Button BtnSearch;
     }
 }
