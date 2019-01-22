@@ -26,6 +26,8 @@ namespace LibraryWFA.Forms
             admin = db.Admins.Find(adminId);
             FillDgvUsers();
             TxtUniqueId.Enabled = false;
+            FillSearchCmb();
+
         }
 
 
@@ -132,11 +134,54 @@ namespace LibraryWFA.Forms
             TxtPhone.ResetText();
             TxtSurname.ResetText();
             TxtUniqueId.ResetText();
+            CmbSearchAdmin.ResetText();
+            CmbSearchId.ResetText();
+        }
+
+        private void FillSearchCmb()
+        {
+            foreach (User user in db.Users.ToList())
+            {
+                CmbSearchId.Items.Add(user.UserUniqueId);
+            }
+            foreach (Admin admin in db.Admins.ToList())
+            {
+                CmbSearchAdmin.Items.Add(admin.Name +" "+admin.Surname);
+            }
         }
         
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            DgvUsers.Rows.Clear();
+            int? adm = null;
+            if (!string.IsNullOrEmpty(CmbSearchAdmin.Text))
+            {
+                adm = db.Admins.FirstOrDefault(a => a.Name ==  CmbSearchAdmin.Text.Split(' ')[0]).Id;
+            }
+            int? UserId = null;
+            if (!string.IsNullOrEmpty(CmbSearchId.Text))
+            {
+                UserId = db.Users.FirstOrDefault(u => u.UserUniqueId == CmbSearchId.Text).Id;
+            }
+            List<User> users = db.Users.Where(u =>
+            (UserId != null ? u.Id == UserId : true) &&
+            (adm != null ? u.CreatedAdmin== adm : true)).ToList();
 
-      
+            foreach (User us in users)
+            {
+                DgvUsers.Rows.Add(us.Id, 
+                    us.Name,
+                    us.Surname,
+                    us.Phone,
+                    us.UserUniqueId, 
+                    us.Admin.Name + us.Admin.Surname);
+            }
+        }
 
-        
+        private void BtnReset_Click(object sender, EventArgs e)
+        {
+            Reset();
+            FillDgvUsers();
+        }
     }
 }

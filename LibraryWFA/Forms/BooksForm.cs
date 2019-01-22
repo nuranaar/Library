@@ -26,6 +26,7 @@ namespace LibraryWFA.Forms
             InitializeComponent();
             FillDgvBooks();
             IfAdminBoss();
+            FillCmbBook();
         }
 
         //admin eyer bosdursa
@@ -127,7 +128,31 @@ namespace LibraryWFA.Forms
             BtnUpdate.Visible = false;
             TxtName.ResetText();
             NudCount.Value=0;
+            CmbBookName.ResetText();
         }
-        
+
+        private void FillCmbBook()
+        {
+            foreach (Book b in db.Books.ToList())
+            {
+                CmbBookName.Items.Add(b.Name);
+            }
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            DgvBooks.Rows.Clear();
+            if (!string.IsNullOrEmpty(CmbBookName.Text))
+            {
+                book = db.Books.FirstOrDefault(b => b.Name == CmbBookName.Text);
+            }
+            DgvBooks.Rows.Add(book.Id, book.Name, book.Count);
+        }
+
+        private void BtnReset_Click(object sender, EventArgs e)
+        {
+            Reset();
+            FillDgvBooks();
+        }
     }
 }

@@ -271,6 +271,7 @@ namespace LibraryWFA
         private void BtnReset_Click(object sender, EventArgs e)
         {
             Reset();
+            FillDgvReserves();
         }
     }
 

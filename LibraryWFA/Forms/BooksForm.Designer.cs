@@ -42,10 +42,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.PcbBooks = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.BtnSearch = new System.Windows.Forms.Button();
+            this.BtnReset = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.CmbBookName = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvBooks)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NudCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PcbBooks)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // DgvBooks
@@ -57,7 +63,7 @@
             this.Column1,
             this.Column2,
             this.Column3});
-            this.DgvBooks.Location = new System.Drawing.Point(341, 80);
+            this.DgvBooks.Location = new System.Drawing.Point(320, 141);
             this.DgvBooks.Name = "DgvBooks";
             this.DgvBooks.Size = new System.Drawing.Size(287, 171);
             this.DgvBooks.TabIndex = 0;
@@ -88,7 +94,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.TxtName);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 80);
+            this.groupBox1.Location = new System.Drawing.Point(12, 141);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(285, 171);
             this.groupBox1.TabIndex = 1;
@@ -182,11 +188,65 @@
             this.label1.TabIndex = 25;
             this.label1.Text = "Kitablar";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.BtnSearch);
+            this.groupBox2.Controls.Add(this.BtnReset);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.CmbBookName);
+            this.groupBox2.Location = new System.Drawing.Point(12, 66);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(595, 69);
+            this.groupBox2.TabIndex = 27;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Axtaris";
+            // 
+            // BtnSearch
+            // 
+            this.BtnSearch.BackgroundImage = global::LibraryWFA.Properties.Resources.search;
+            this.BtnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnSearch.Location = new System.Drawing.Point(457, 12);
+            this.BtnSearch.Name = "BtnSearch";
+            this.BtnSearch.Size = new System.Drawing.Size(48, 48);
+            this.BtnSearch.TabIndex = 39;
+            this.BtnSearch.UseVisualStyleBackColor = true;
+            this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            // 
+            // BtnReset
+            // 
+            this.BtnReset.BackgroundImage = global::LibraryWFA.Properties.Resources.reset;
+            this.BtnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BtnReset.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnReset.Location = new System.Drawing.Point(530, 12);
+            this.BtnReset.Name = "BtnReset";
+            this.BtnReset.Size = new System.Drawing.Size(48, 48);
+            this.BtnReset.TabIndex = 38;
+            this.BtnReset.UseVisualStyleBackColor = true;
+            this.BtnReset.Click += new System.EventHandler(this.BtnReset_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 30);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Kitabin adi:";
+            // 
+            // CmbBookName
+            // 
+            this.CmbBookName.FormattingEnabled = true;
+            this.CmbBookName.Location = new System.Drawing.Point(101, 27);
+            this.CmbBookName.Name = "CmbBookName";
+            this.CmbBookName.Size = new System.Drawing.Size(164, 21);
+            this.CmbBookName.TabIndex = 0;
+            // 
             // BooksForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 316);
+            this.ClientSize = new System.Drawing.Size(640, 352);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.PcbBooks);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
@@ -199,6 +259,8 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NudCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PcbBooks)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,5 +282,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.NumericUpDown NudCount;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox CmbBookName;
+        private System.Windows.Forms.Button BtnSearch;
+        private System.Windows.Forms.Button BtnReset;
     }
 }

@@ -49,9 +49,17 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BtnSearch = new System.Windows.Forms.Button();
+            this.BtnReset = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.CmbSearchAdmin = new System.Windows.Forms.ComboBox();
+            this.CmbSearchId = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.GrbAnket.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // GrbAnket
@@ -67,7 +75,7 @@
             this.GrbAnket.Controls.Add(this.label5);
             this.GrbAnket.Controls.Add(this.TxtName);
             this.GrbAnket.Controls.Add(this.label7);
-            this.GrbAnket.Location = new System.Drawing.Point(12, 72);
+            this.GrbAnket.Location = new System.Drawing.Point(12, 157);
             this.GrbAnket.Name = "GrbAnket";
             this.GrbAnket.Size = new System.Drawing.Size(283, 255);
             this.GrbAnket.TabIndex = 4;
@@ -184,7 +192,7 @@
             this.Column4,
             this.Column5,
             this.Column6});
-            this.DgvUsers.Location = new System.Drawing.Point(325, 72);
+            this.DgvUsers.Location = new System.Drawing.Point(313, 157);
             this.DgvUsers.Name = "DgvUsers";
             this.DgvUsers.Size = new System.Drawing.Size(556, 255);
             this.DgvUsers.TabIndex = 5;
@@ -241,11 +249,86 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.BtnSearch);
+            this.groupBox1.Controls.Add(this.BtnReset);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.CmbSearchAdmin);
+            this.groupBox1.Controls.Add(this.CmbSearchId);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Location = new System.Drawing.Point(12, 76);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(849, 71);
+            this.groupBox1.TabIndex = 32;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Axraris";
+            // 
+            // BtnSearch
+            // 
+            this.BtnSearch.BackgroundImage = global::LibraryWFA.Properties.Resources.search;
+            this.BtnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnSearch.Location = new System.Drawing.Point(682, 14);
+            this.BtnSearch.Name = "BtnSearch";
+            this.BtnSearch.Size = new System.Drawing.Size(48, 48);
+            this.BtnSearch.TabIndex = 37;
+            this.BtnSearch.UseVisualStyleBackColor = true;
+            this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            // 
+            // BtnReset
+            // 
+            this.BtnReset.BackgroundImage = global::LibraryWFA.Properties.Resources.reset;
+            this.BtnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BtnReset.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnReset.Location = new System.Drawing.Point(746, 14);
+            this.BtnReset.Name = "BtnReset";
+            this.BtnReset.Size = new System.Drawing.Size(48, 48);
+            this.BtnReset.TabIndex = 36;
+            this.BtnReset.UseVisualStyleBackColor = true;
+            this.BtnReset.Click += new System.EventHandler(this.BtnReset_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label4.Location = new System.Drawing.Point(311, 32);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(140, 13);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "Qeydiyyata salan wexsin ad:";
+            // 
+            // CmbSearchAdmin
+            // 
+            this.CmbSearchAdmin.FormattingEnabled = true;
+            this.CmbSearchAdmin.Location = new System.Drawing.Point(467, 28);
+            this.CmbSearchAdmin.Name = "CmbSearchAdmin";
+            this.CmbSearchAdmin.Size = new System.Drawing.Size(144, 21);
+            this.CmbSearchAdmin.TabIndex = 33;
+            // 
+            // CmbSearchId
+            // 
+            this.CmbSearchId.FormattingEnabled = true;
+            this.CmbSearchId.Location = new System.Drawing.Point(107, 28);
+            this.CmbSearchId.Name = "CmbSearchId";
+            this.CmbSearchId.Size = new System.Drawing.Size(144, 21);
+            this.CmbSearchId.TabIndex = 35;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label6.Location = new System.Drawing.Point(12, 32);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 13);
+            this.label6.TabIndex = 34;
+            this.label6.Text = "Musterini kodu:";
+            // 
             // UsersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(893, 392);
+            this.ClientSize = new System.Drawing.Size(893, 446);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.DgvUsers);
@@ -257,6 +340,8 @@
             this.GrbAnket.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,5 +370,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button BtnSearch;
+        private System.Windows.Forms.Button BtnReset;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox CmbSearchAdmin;
+        private System.Windows.Forms.ComboBox CmbSearchId;
+        private System.Windows.Forms.Label label6;
     }
 }
